@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block{
+            width: 150px;
+            height: 150px;
+            background-color: aquamarine;
+            margin: 50px auto;
+            border-radius: 0;
+            transition: all 0.5s ease;
+        }
+        .button-container{
+            text-align: center;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: aliceblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Change Shape and Color of Block</h1>
+    <div id="block"></div>
+    <div class="button-container">
+        <button onclick="changeBlock()">Change</button>
+    </div>
+    <script>
+        function changeBlock(){
+            const block=document.getElementById("block");
+            const randomColor="#"+Math.floor(Math.random()*16777215).toString(16);
+            const isCircle=Math.random()>0.5;
+            block.style.backgroundColor=randomColor;
+            block.style.borderRadius=isCircle?"50%":"0";
+        }
+    </script>
+</body>
+</html>
